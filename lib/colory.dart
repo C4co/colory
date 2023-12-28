@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'colory_content.dart';
+
 class Colory extends StatefulWidget {
   const Colory({super.key});
 
@@ -8,6 +10,8 @@ class Colory extends StatefulWidget {
 }
 
 class _ColoryState extends State<Colory> {
+  Color mainColor = Colors.white;
+
   @override
   Widget build(BuildContext context) {
     return FilledButton(
@@ -15,33 +19,7 @@ class _ColoryState extends State<Colory> {
         showModalBottomSheet(
           context: context,
           builder: (context) {
-            return SizedBox(
-              height: 200,
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 60,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 10,
-                      itemBuilder: (context, index) {
-                        return Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            color: Colors.red,
-                            border: Border.all(
-                              color: Colors.white,
-                              width: 2,
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  )
-                ],
-              ),
-            );
+            return const ColoryContent();
           },
         );
       },
